@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
               //     child: Text('home'),
               //   ),
               // ),
-              HomeScreen(),
+              HomeScreen(), // 상위타이틀
               Container(
                 child: Center(
                   child: Text('search'),
