@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/screen/home_screen.dart';
 import 'package:netflix_clone/widget/bottom_bar.dart';
 
 void main() => runApp(MyApp());
@@ -13,6 +14,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'NingpopFlix',
+      // dark테마 사용을 위한 테마 데이터 설정
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.black,
@@ -24,11 +26,12 @@ class _MyAppState extends State<MyApp> {
           body: TabBarView(
             physics: NeverScrollableScrollPhysics(), // 손으로 스크롤이 되지않음
             children: [
-              Container(
-                child: Center(
-                  child: Text('home'),
-                ),
-              ),
+              // Container(
+              //   child: Center(
+              //     child: Text('home'),
+              //   ),
+              // ),
+              HomeScreen(),
               Container(
                 child: Center(
                   child: Text('search'),
