@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/model/model_movie.dart';
+import 'package:netflix_clone/widget/box_slider.dart';
 import 'package:netflix_clone/widget/carousel_slider.dart';
+import 'package:netflix_clone/widget/circle_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
@@ -52,7 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
             CarouselImage(movies: movies),
             TopBar(),
           ],
-        )
+        ),
+        // 홈 화면에 CircleSlider 추가
+        CircleSlider(
+          movies: movies,
+        ),
+        // 홈 화면에 BoxSlider 추가
+        BoxSlider(
+          movies: movies,
+        ),
       ],
     );
   }
