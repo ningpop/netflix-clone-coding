@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/model/model_movie.dart';
+import 'package:netflix_clone/screen/detail_screen.dart';
 
 class CarouselImage extends StatefulWidget {
   final List<Movie> movies;
@@ -101,7 +102,16 @@ class _CarouselImageState extends State<CarouselImage> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(Icons.info),
-                  onPressed: () {},
+                  onPressed: () {
+                    // 팝업 페이지로의 연결(영화 정보 넘겨줌)
+                    Navigator.of(context).push(MaterialPageRoute<Null>(
+                        fullscreenDialog: true,
+                        builder: (BuildContext context) {
+                          return DetailScreen(
+                            movie: movies[_currentPage],
+                          );
+                        }));
+                  },
                 ),
                 Text(
                   "정보",
